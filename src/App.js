@@ -13,6 +13,8 @@ function App() {
           <HeaderComponent />
           <div className="container">
             <Switch>
+              <Route path="/" exact component={FetchUserDetails}></Route>
+              <Route path="/fetchUserDetails" component={FetchUserDetails}></Route>
               <FetchUserDetails />
             </Switch>
           </div>
