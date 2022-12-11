@@ -45,8 +45,10 @@ class FetchUserDetails extends Component {
 
     render() {
         return (
-            <div class="container">
-              
+            <div className="row">
+                <label> Employee First name: </label>
+
+                <div> {this.state.personalDetails.firstName}</div>
             </div>
 
 
