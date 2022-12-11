@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import FetchUserDetailsService from '../../service/customerService/FetchUserDetailsService';
+import CustomerService from '../../service/customerService/FetchUserDetailsService';
 
 class FetchUserDetails extends Component {
     constructor(props) {
@@ -14,7 +14,7 @@ class FetchUserDetails extends Component {
 
 
     componentDidMount() {
-        FetchUserDetailsService.fetchUser().then((userEntity) => {
+        CustomerService.fetchUser().then((userEntity) => {
             const userDetails = userEntity.data;
             this.setState({ userEntity: userDetails })
             this.setState({ personalDetails: getPersonalDetails(userDetails) })

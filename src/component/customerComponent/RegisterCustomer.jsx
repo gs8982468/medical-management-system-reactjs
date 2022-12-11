@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import FetchUserDetailsService from '../../service/customerService/FetchUserDetailsService';
 
 class RegisterCustomer extends Component {
 
@@ -31,8 +32,11 @@ class RegisterCustomer extends Component {
 
     saveOrUpdateCustomer=(e)=>{
         e.preventDefault();
-        let customer = {firstName: this.state.firstName, lastName: this.state.lastName, userName: this.state.userName, emailAddress: this.state.emailAddress, phoneCode: this.state.phoneCode, password: this.state.password, confirmPassword: this.state.confirmPassword};
+        let customer = {firstName: this.state.firstName, lastName: this.state.lastName, userName: this.state.userName, emailAddress: this.state.emailAddress, phoneCode: this.state.phoneCode, mobileNumber:this.state.mobileNumber,password: this.state.password, confirmPassword: this.state.confirmPassword};
         console.log('employee => ' + JSON.stringify(customer));
+        FetchUserDetailsService.registerCustomer(customer).then(response=>{
+            this.props.history.push('/');
+        });
 
 
 
